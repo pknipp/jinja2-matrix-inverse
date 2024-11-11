@@ -26,6 +26,11 @@ def hello():
         html += "<li>" + instruction + "</li>"
     return html + "</ul>" + bottom + '</p>'
 
+@app.route('/jinja2')
+def test():
+    name = 'World'
+    return render_template('index.html', name=name)
+
 @app.route('/<square_in>')
 def square(square_in):
     results = helper.parse(False, square_in)
