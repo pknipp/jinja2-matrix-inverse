@@ -1,5 +1,5 @@
 import cmath
-from flask import Flask
+from flask import Flask, render_template
 from . import helper
 
 app = Flask(__name__)
@@ -29,7 +29,7 @@ def hello():
 @app.route('/jinja2')
 def test():
     name = 'World'
-    return render_template('index.html', name=name)
+    return render_template('jinja.html', name=name)
 
 @app.route('/<square_in>')
 def square(square_in):
