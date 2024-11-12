@@ -5,14 +5,17 @@
     </head>
     <body>
         <p align="center">
-            <div>
-                <a href="https://jinja2-matrix-inverse-e7c3411e719f.herokuapp.com">
-                    Return
-                </a>
-                to the instructions page.
-            </div>
-            <div>Error: {{ message }}</div>
-            <div>Problematic strings:</div>
+            ERROR
+            <br/>
+            {{ message }}
+            <br/>
+            <a href="https://jinja2-matrix-inverse-e7c3411e719f.herokuapp.com">
+                Return
+            </a>
+            to the instructions page.
+            <br/>
+            Problematic strings:
+            <br/>
             <ul>
                 {% for string in strings %}
                     <li>{{ string }}</li>
