@@ -19,7 +19,7 @@
                 <tr>
                     <th colspan="{{n}}">original matrix</th>
                     {% if inhomogeneous_part %}
-                        <th rowspan="{{m}}">inhomogeneous part</th>
+                        <th colspan="{{m}}">inhomogeneous part</th>
                     {% endif %}
                 </tr>
             </thead>
@@ -39,17 +39,17 @@
                 <tr>
                     <th colspan="{{n}}">inverse matrix</th>
                     {% if inhomogeneous_part %}
-                        <th rowspan="{{m}}">solution</th>
+                        <th colspan="{{m}}">solution</th>
                     {% endif %}
                 </tr>
             </thead>
             <tbody>
-                {% for i, row in invers_matrix %}
+                {% for i, row in inverse_matrix %}
                     <tr>
                         {% for element in row %}
                             <td>{{element}}</td>
                         {% endfor %}
-                        {% for column in solutions%}
+                        {% for column in solutions %}
                             <td>{{column[i]}}</td>
                         {% endfor %}
                     </tr>
