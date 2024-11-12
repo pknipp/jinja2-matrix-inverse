@@ -35,10 +35,7 @@ def rect(square_in, rect_in):
     if isinstance(results, str):
         return top + results + "</body>"
     else:
-        html = '<h4>' + results["error"]["message"] + '</h4><div>Problematic string(s)</div><ul>'
-        for string in results["error"]["strings"]:
-            html += '<li>' + string + '</li>'
-        return html + '</ul>'
+        return render_template('error.html', message=results["error"]["message"], strings=results["error"]["strings"])
 
 @app.route('/json/<square_in>')
 def json_square(square_in):
