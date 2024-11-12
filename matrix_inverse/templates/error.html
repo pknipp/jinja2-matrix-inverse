@@ -16,13 +16,9 @@
             <br/>
             Problematic strings:
             <br/>
-            <p align="center">
-                <ul>
-                    {% for string in strings %}
-                        <li>{{ string }}</li>
-                    {% endfor %}
-                </ul>
-            </p>
+            {% for string in strings %}
+                {{ string }}<br/>
+            {% endfor %}
         </p>
     <body>
 </html>
