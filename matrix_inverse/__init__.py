@@ -24,10 +24,12 @@ def hello():
 @app.route('/<square_in>')
 def square(square_in):
     results = helper.parse(False, square_in)
-    if isinstance(results, str):
-        return top + results + '</body>'
-    else:
+    # if isinstance(results, str):
+        # return top + results + '</body>'
+    if "error" in results:
         return render_template('error.html', message=results["error"]["message"], strings=results["error"]["strings"])
+    else:
+        return render_template("results.html", determinant=results["determinant"])
 
 @app.route('/<square_in>/<rect_in>')
 def rect(square_in, rect_in):
