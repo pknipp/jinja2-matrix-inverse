@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Matrix inverse</title>
-</head>
-<h3><p align="center">
-    ERROR:
-</p></h3>
-<p align="center">
-    <a href="https://jinja2-matrix-inverse-e7c3411e719f.herokuapp.com">
-        Return
-    </a>
-    to the instructions page.
-</p>
-<div>Problematic string(s):</div>
-<body>
+    <head>
+        <title>Matrix inverse</title>
+    </head>
+    <body>
+        <p align="center">
+            <a href="https://jinja2-matrix-inverse-e7c3411e719f.herokuapp.com">
+                Return
+            </a>
+            to the instructions page.
+            <div>Error: Problematic string(s)</div>
+            <ul>
+                {% for string in strings %}
+                    <li>{{ string }}</li>
+                {% endfor %}
+            </ul>
+        </p>
+    <body>
+</html>
