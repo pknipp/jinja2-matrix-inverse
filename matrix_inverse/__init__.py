@@ -17,19 +17,9 @@ def react_root(path):
         return app.send_static_file('favicon.ico')
     return app.send_static_file('index.html')
 
-
 @app.route('/')
 def hello():
-    html = top + "<h3><p align=center>Instructions for Matrix Inversion:</p></h3>"
-    html += '<p align=center><a href="https://pknipp.github.io/math">Return</a> to the Math APIs page.<ul>'
-    for instruction in helper.instructions:
-        html += "<li>" + instruction + "</li>"
-    return html + "</ul>" + bottom + '</p>'
-
-@app.route('/jinja2')
-def test():
-    name = 'World'
-    return render_template('jinja.html', name=name)
+    return render_template('index.html')
 
 @app.route('/<square_in>')
 def square(square_in):
@@ -37,11 +27,7 @@ def square(square_in):
     if isinstance(results, str):
         return top + results + '</body>'
     else:
-        html = '<h4>' + results["error"]["message"] + '</h4><div>Problematic string(s)</div><ul>'
-        print("strings is ", results["error"]["strings"])
-        for string in results["error"]["strings"]:
-            html += '<li>' + string + '</li>'
-        return html + '</ul>'
+        return render_template('error.html', message=results["error"]["message"], strings=results["error"]["strings"])
 
 @app.route('/<square_in>/<rect_in>')
 def rect(square_in, rect_in):
