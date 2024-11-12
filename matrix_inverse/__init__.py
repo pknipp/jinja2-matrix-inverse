@@ -39,7 +39,7 @@ def rect(square_in, rect_in):
     if "error" in results:
         return render_template('error.html', message=results["error"]["message"], strings=results["error"]["strings"])
     else:
-        return render_template("results.html", determinant=results["determinant"])
+        return render_template("results.html", determinant=results["determinant"], n=len(results["original matrix"]))
 
 @app.route('/json/<square_in>')
 def json_square(square_in):

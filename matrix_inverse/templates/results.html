@@ -13,6 +13,17 @@
         to the Instructions page.
         <br/>
         determinant = {{determinant}}
+        <br/>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan={{n}}>original matrix</th>
+                    {% if inhomogeneous_part %}
+                        <th>inhomogeneous part</th>
+                    {% endif %}
+                </tr>
+            </thead>
+        </table>
     </p>
 </body>
 </html>
