@@ -34,10 +34,12 @@ def square(square_in):
 @app.route('/<square_in>/<rect_in>')
 def rect(square_in, rect_in):
     results = helper.parse(False, square_in, rect_in)
-    if isinstance(results, str):
-        return top + results + "</body>"
-    else:
+    # if isinstance(results, str):
+        # return top + results + "</body>"
+    if "error" in results:
         return render_template('error.html', message=results["error"]["message"], strings=results["error"]["strings"])
+    else:
+        return render_template("results.html", determinant=results["determinant"])
 
 @app.route('/json/<square_in>')
 def json_square(square_in):

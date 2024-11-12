@@ -188,7 +188,7 @@ def parse(is_json, square_in, rect_in = '[]'):
         if results["determinant"]:
             for j in range(n):
                 results["inverse matrix"][i][j] = my_int(results["inverse matrix"][i][j])
-    if is_json:
+    if True: #is_json:
         return results
     else:
         original_matrix = []
