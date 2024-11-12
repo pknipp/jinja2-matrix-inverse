@@ -11,7 +11,8 @@
                 </a>
                 to the instructions page.
             </div>
-            <div>Error: Problematic string(s)</div>
+            <div>Error: {{ message }}</div>
+            <div>Problematic strings:</div>
             <ul>
                 {% for string in strings %}
                     <li>{{ string }}</li>

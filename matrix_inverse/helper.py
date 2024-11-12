@@ -109,7 +109,7 @@ def parse(is_json, square_in, rect_in = '[]'):
     try:
         a = json.loads(square_in)
     except:
-        return {'error': {"message": "There is something wrong with your matrix 'A', as you typed it after the '/' symbol in the address bar above.", "strings": [square_in]}}
+        return {'error': {"message": "There is something wrong with your matrix 'A' as typed after the '/' symbol in the address bar above.", "strings": [square_in]}}
     if not isinstance(a, list):
         return {'error': {"message": 'Your matrix should be a comma-separated list of lists, with both the inner- and outer lists enclosed by square brackets.  Please double-check how you have typed it in the address bar above.', "strings": [square_in]}}
     n = len(a)
