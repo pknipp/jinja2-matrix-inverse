@@ -171,18 +171,18 @@ def parse(is_json, square_in, rect_in = '[]'):
         results['inverse matrix'] = a_inv
     elif rect_in:
         results["WARNING"] = "Because the determinant is zero, some/all solutions may be huge."
+    solutions = []
     if rect_in:
-        solutions = []
         for row in rect_in:
             solution = lubskb(results["lu"], results["indx"], row)
             for i in range(len(solution)):
                 solution[i] = my_int(solution[i])
             solutions.append(solution)
-        results['solutions'] = solutions
     results.pop('lu')
     results.pop('indx')
     results['original matrix'] = a
     results['inhomogeneous part'] = rect_in
+    results['solutions'] = solutions
     results['determinant'] = my_int(results["determinant"])
     for i in range(n):
         if results["determinant"]:
