@@ -23,6 +23,15 @@
                     {% endif %}
                 </tr>
             </thead>
+            <tbody>
+                {% for row in original_matrix %}
+                    <tr>
+                        {% for element in row %}
+                            <td>{{element}}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
         </table>
     </p>
 </body>
