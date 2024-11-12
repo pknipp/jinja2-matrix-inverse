@@ -188,13 +188,13 @@ def parse(is_json, square_in, rect_in = '[]'):
         if results["determinant"]:
             for j in range(n):
                 results["inverse matrix"][i][j] = my_int(results["inverse matrix"][i][j])
-    heading = 'RESULTS'
-    results = {heading: results}
+    # heading = 'RESULTS'
+    # results = {heading: results}
     if is_json:
         return results
     else:
         # Strip off heading, to make subsequent rows of code less verbose.
-        results = results[heading]
+        # results = results[heading]
         original_matrix = []
         for row in results["original matrix"]:
             html_row = ''
@@ -224,7 +224,7 @@ def parse(is_json, square_in, rect_in = '[]'):
                     html_row += '<td style=text-align:center >' + str(column[j]) + '</td>'
                 solutions.append(html_row)
 
-        html = "<p align=center>" + heading + "</p>"
+        html = "<p align=center>" + "RESULTS" + "</p>"
         html += '<p align=center><a href="https://matrix-inverse.herokuapp.com/">Return</a>&nbsp;to the instructions page.</p>'
         html += "<p align=center>determinant = " + str(results["determinant"]) + "</p>"
         if "WARNING" in results:
