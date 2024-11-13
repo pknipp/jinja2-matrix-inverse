@@ -24,15 +24,15 @@ def hello():
 def square(square_in):
     results = helper.parse(False, square_in)
     determinant = results["determinant"]
-    n = len(results["original matrix"])
-    m = len(results["inhomogeneous part"])
+    original_matrix = results["original matrix"]
+    n = len(original_matrix)
     inhomogeneous_part=results["inhomogeneous part"]
+    m = len(inhomogeneous_part)
     original_matrix = enumerate(results["original matrix"])
     solutions = results["solutions"]
     inverse_matrix = results.get("inverse matrix")
     if inverse_matrix is not None:
         inverse_matrix = enumerate(inverse_matrix)
-
     if "error" in results:
         return render_template('error.html', message=results["error"]["message"], strings=results["error"]["strings"])
     else:
@@ -43,9 +43,11 @@ def rect(square_in, rect_in):
     results = helper.parse(False, square_in, rect_in)
     results = helper.parse(False, square_in)
     determinant = results["determinant"]
-    n = len(results["original matrix"])
-    m = len(results["inhomogeneous part"])
+    original_matrix = results["original matrix"]
+    n = len(original_matrix)
+    original_matrix = enumerate(original_matrix)
     inhomogeneous_part=results["inhomogeneous part"]
+    m = len(inhomogeneous_part)
     original_matrix = enumerate(results["original matrix"])
     solutions = results["solutions"]
     inverse_matrix = results.get("inverse matrix")
