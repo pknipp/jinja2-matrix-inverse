@@ -71,7 +71,6 @@
                                     {{column[i]}}
                                 </td>
                             {% endfor %}
-
                             {% for column in inhomogeneous_part%}
                                 <td style=text-align:center>
                                     {{column[i]}}
@@ -85,7 +84,7 @@
                             does<br/>not<br/>exist
                         </td>
                     </tr>
-                    {% for i, row in original_matrix %}
+                    {% for i in range(n) %}
                         <tr>
                             {% for column in solutions %}
                                 <td style=text-align:center>
