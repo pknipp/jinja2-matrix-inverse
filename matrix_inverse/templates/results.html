@@ -60,11 +60,6 @@
                         </tr>
                     {% endfor %}
                 {% else %}
-                    <tr>
-                        <td rowspan="{{n}}" colspan="{{n}}" style=text-align:center>
-                            does<br/>not<br/>exist
-                        </td>
-                    </tr>
                     {% for i, row in original_matrix %}
                         <tr>
                             {% for column in solutions %}
@@ -74,6 +69,11 @@
                             {% endfor %}
                         </tr>
                     {% endfor %}
+                    <tr>
+                        <td rowspan="{{n}}" colspan="{{n}}" style=text-align:center>
+                            does<br/>not<br/>exist
+                        </td>
+                    </tr>
                 {% endif %}
             </tbody>
         </table>
