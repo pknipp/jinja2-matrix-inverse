@@ -19,9 +19,13 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th colspan="{{n}}">original matrix</th>
+                    <th colspan="{{n}}">
+                        original matrix
+                    </th>
                     {% if inhomogeneous_part %}
-                        <th colspan="{{m}}">inhomogeneous part</th>
+                        <th colspan="{{m}}">
+                            inhomogeneous part
+                        </th>
                     {% endif %}
                 </tr>
             </thead>
@@ -29,19 +33,27 @@
                 {% for i, row in original_matrix %}
                     <tr>
                         {% for element in row %}
-                            <td style=text-align:center>{{element}}</td>
+                            <td style=text-align:center>
+                                {{element}}
+                            </td>
                         {% endfor %}
                         {% for column in inhomogeneous_part%}
-                            <td style=text-align:center>{{column[i]}}</td>
+                            <td style=text-align:center>
+                                {{column[i]}}
+                            </td>
                         {% endfor %}
                     </tr>
                 {% endfor %}
             </tbody>
             <thead>
                 <tr>
-                    <th colspan="{{n}}">inverse matrix</th>
+                    <th colspan="{{n}}">
+                        inverse matrix
+                    </th>
                     {% if inhomogeneous_part %}
-                        <th colspan="{{m}}">solution</th>
+                        <th colspan="{{m}}">
+                            solution
+                        </th>
                     {% endif %}
                 </tr>
             </thead>
@@ -50,9 +62,17 @@
                     {% for i, row in inverse_matrix %}
                         <tr>
                             {% for element in row %}
-                                <td style=text-align:center>{{element}}</td>
+                                <td style=text-align:center>
+                                    {{element}}
+                                </td>
                             {% endfor %}
                             {% for column in solutions %}
+                                <td style=text-align:center>
+                                    {{column[i]}}
+                                </td>
+                            {% endfor %}
+
+                            {% for column in inhomogeneous_part%}
                                 <td style=text-align:center>
                                     {{column[i]}}
                                 </td>
@@ -60,6 +80,20 @@
                         </tr>
                     {% endfor %}
                 {% else %}
+                    <!-- <tr>
+                        <td rowspan="{{n}}" colspan="{{n}}" style=text-align:center>
+                            does<br/>not<br/>exist
+                        </td>
+                    </tr> -->
+                    {% for i, row in original_matrix %}
+                        <tr>
+                            {% for element in row %}
+                                <td style=text-align:center>
+                                    {{element}}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
                     {% for i, row in original_matrix %}
                         <tr>
                             {% for column in solutions %}
@@ -69,11 +103,6 @@
                             {% endfor %}
                         </tr>
                     {% endfor %}
-                    <tr>
-                        <td rowspan="{{n}}" colspan="{{n}}" style=text-align:center>
-                            does<br/>not<br/>exist
-                        </td>
-                    </tr>
                 {% endif %}
             </tbody>
         </table>
