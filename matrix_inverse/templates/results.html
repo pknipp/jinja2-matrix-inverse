@@ -46,16 +46,31 @@
                 </tr>
             </thead>
             <tbody>
-                {% for i, row in inverse_matrix %}
+                {% if inverse_matrix %}
+                    {% for i, row in inverse_matrix %}
+                        <tr>
+                            {% for element in row %}
+                                <td>{{element}}</td>
+                            {% endfor %}
+                            {% for column in solutions %}
+                                <td>{{column[i]}}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                {% else %}
                     <tr>
-                        {% for element in row %}
-                            <td>{{element}}</td>
-                        {% endfor %}
-                        {% for column in solutions %}
-                            <td>{{column[i]}}</td>
-                        {% endfor %}
+                        <td rowspan="{{n}}" colspan="{{n}}">
+                            does<br/>not<br/>exist
+                        </td>
                     </tr>
-                {% endfor %}
+                    {% for i, _ in original_matrix %}
+                        <tr>
+                            {% for column in solutions %}
+                                <td>{{column[i]}}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                {% endif %}
             </tbody>
         </table>
     </p>
