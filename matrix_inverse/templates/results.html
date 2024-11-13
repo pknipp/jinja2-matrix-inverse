@@ -14,6 +14,9 @@
         <br/>
         determinant = {{determinant}}
         <br/>
+        {%if warning %}
+            {{warning}}
+        {% endif %}
     </p>
     <div style="display:flex; justify-content:center;">
         <table border="1">
@@ -80,6 +83,7 @@
                     {% endfor %}
                 {% else %}
                     <tr>
+                        <!-- For some reason jinja2 wants this +1 -->
                         <td rowspan="{{n + 1}}" colspan="{{n}}" style=text-align:center>
                             does<br/>not<br/>exist
                         </td>
