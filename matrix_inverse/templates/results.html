@@ -14,6 +14,8 @@
         <br/>
         determinant = {{determinant}}
         <br/>
+    </p>
+    <p align="center">
         <table border="1">
             <thead>
                 <tr>
@@ -27,10 +29,10 @@
                 {% for i, row in original_matrix %}
                     <tr>
                         {% for element in row %}
-                            <td>{{element}}</td>
+                            <td style=text-align:center>{{element}}</td>
                         {% endfor %}
                         {% for column in inhomogeneous_part%}
-                            <td>{{column[i]}}</td>
+                            <td style=text-align:center>{{column[i]}}</td>
                         {% endfor %}
                     </tr>
                 {% endfor %}
