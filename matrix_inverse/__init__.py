@@ -4,10 +4,6 @@ from . import helper
 
 app = Flask(__name__)
 
-# The following are used to wrap the html string created for server-side rendering.
-top = "<head><title>Matrix inverse</title></head><body>"
-bottom = "<p align=center>creator:&nbsp;<a href='https://pknipp.github.io/' target='_blank' rel='noopener noreferrer'>Peter Knipp</a><br/>repo:&nbsp;<a href='https://github.com/pknipp/matrix-inverse' target='_blank'  rel='noopener noreferrer'>github.com/pknipp/matrix-inverse</a></p></body>"
-
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def react_root(path):
