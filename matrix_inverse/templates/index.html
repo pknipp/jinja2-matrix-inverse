@@ -15,13 +15,13 @@
     </p>
     <ul>
         <li>
-            After <tt>...herokuapp.com</tt> above you should type <tt>/json/</tt> and then your (square) matrix.
+            After <tt>...herokuapp.com</tt> above you should type <tt>/</tt> followed by your (square) matrix.
         </li>
         <li>
-            Spaces are allowed - but discouraged - in whichever format you use, because <tt>%20</tt> will replace each space after you hit <tt>return</tt>, thereby making the address uglier.
+            Spaces are allowed - but discouraged - because <tt>%20</tt> will replace each space after you hit <tt>return</tt>, thereby making the address uglier.
         </li>
         <li>
-            Input your matrix (<i>A</i>) as a comma-separated list of comma-separated lists of numbers, each list contained by square brackets.
+            Input your matrix (<i>A</i>) as a comma-separated list of comma-separated lists of numbers, each inner-list being a row of the matrix.  Contain both inner- and outer lists with brackets.
         </li>
         <li>
             Represent each number may as an integer or decimal but not as fraction, because "<tt>/</tt>" has special meaning in a URL. Do not include a comma in any number (even one exceeding one thousand), because that will get confused with the commas which separate different numbers.
@@ -29,10 +29,10 @@
         <li>
             example of a 2x2 matrix:
             <br/>
-            <tt>[[1,2],[3,4]]</tt>
+            <tt>/[[1,2],[3,4]]</tt>
         </li>
         <li>
-            If you want to solve a matrix equation of the form <i>Ax</i> = <i>b</i>, then after your matrix type "<tt>/</tt>" followed by one or more column vectors (<i>b</i>), formatted in the same way as for your square matrix.
+            If you want to solve a matrix equation of the form <i>Ax</i> = <i>b</i>, then after your matrix type "<tt>/</tt>" followed by one or more column vectors (<i>b</i>), formatted in the same way as for the rows of your square matrix.
         </li>
         <li>
             example of 3 different systems of equations, each having the same square matrix <i>A</i> (which is the same as in the example above):
@@ -40,7 +40,7 @@
             <tt>/[[1,2],[3,4]]/[[3,5],[2,4],[-1,0]]</tt>
         </li>
         <li>
-            If you want the response in html rather than in json, simply omit <tt>/json</tt> from the address.
+            If you want the response in json rather than in html, simply insert <tt>/json</tt> between <tt>...heroku.com</tt> and the matrix.
         </li>
     </ul>
 
