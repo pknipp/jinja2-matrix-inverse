@@ -26,9 +26,9 @@ def square(square_in):
     determinant = results["determinant"]
     original_matrix = results["original matrix"]
     n = len(original_matrix)
+    original_matrix = enumerate(original_matrix)
     inhomogeneous_part=results["inhomogeneous part"]
     m = len(inhomogeneous_part)
-    original_matrix = enumerate(results["original matrix"])
     solutions = results["solutions"]
     inverse_matrix = results.get("inverse matrix")
     if inverse_matrix is not None:
@@ -36,25 +36,25 @@ def square(square_in):
     if "error" in results:
         return render_template('error.html', message=results["error"]["message"], strings=results["error"]["strings"])
     else:
-        return render_template("results.html", determinant=determinant, n=len(original_matrix), m=len(inhomogeneous_part),inhomogeneous_part=inhomogeneous_part, original_matrix=original_matrix, solutions=solutions, inverse_matrix=inverse_matrix)
+        return render_template("results.html", determinant=determinant, n=n, m=m, original_matrix=original_matrix, inhomogeneous_part=inhomogeneous_part, inverse_matrix=inverse_matrix, solutions=solutions)
 
 @app.route('/<square_in>/<rect_in>')
 def rect(square_in, rect_in):
     results = helper.parse(False, square_in, rect_in)
-    results = helper.parse(False, square_in)
     determinant = results["determinant"]
     original_matrix = results["original matrix"]
     n = len(original_matrix)
     original_matrix = enumerate(original_matrix)
     inhomogeneous_part=results["inhomogeneous part"]
     m = len(inhomogeneous_part)
-    original_matrix = enumerate(results["original matrix"])
     solutions = results["solutions"]
     inverse_matrix = results.get("inverse matrix")
+    if inverse_matrix is not None:
+        inverse_matrix = enumerate(inverse_matrix)
     if "error" in results:
         return render_template('error.html', message=results["error"]["message"], strings=results["error"]["strings"])
     else:
-        return render_template("results.html", determinant=determinant, n=len(original_matrix), m=len(inhomogeneous_part),inhomogeneous_part=inhomogeneous_part, original_matrix=original_matrix, solutions=solutions, inverse_matrix=inverse_matrix)
+        return render_template("results.html", determinant=determinant, n=n, m=m, original_matrix=original_matrix, inhomogeneous_part=inhomogeneous_part, inverse_matrix=inverse_matrix, solutions=solutions)
 
 @app.route('/json/<square_in>')
 def json_square(square_in):
