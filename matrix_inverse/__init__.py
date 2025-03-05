@@ -54,10 +54,10 @@ def rect(square_in, rect_in):
             inverse_matrix = enumerate(inverse_matrix)
         return render_template("results.html", determinant=determinant, n=n, m=m, original_matrix=original_matrix, inhomogeneous_part=inhomogeneous_part, inverse_matrix=inverse_matrix, solutions=solutions, warning=warning)
 
-@app.route('/json/<square_in>')
+@app.route('/api/<square_in>')
 def json_square(square_in):
     return helper.parse(True, square_in)
 
-@app.route('/json/<square_in>/<rect_in>')
+@app.route('/api/<square_in>/<rect_in>')
 def json_rect(square_in, rect_in):
     return helper.parse(True, square_in, rect_in)
