@@ -28,13 +28,13 @@
             Represent each number as an integer or decimal but not as fraction, because "<tt>/</tt>" has special meaning in a URL. Do not include a comma in any number (even one exceeding one thousand), because that will get confused with the commas which separate different numbers.
         </li>
         <li>
-            Example: <a href={{base_url ~ frag1}}>Click here</a> for the url ...herokuapp.com/{{frag1}}, which represents a simple 2x2 matrix.
+            Example: <a href={{base_url ~ frag1}}>Click here</a> for the url ...herokuapp.com{{frag1}}, which represents a simple 2x2 matrix.
         </li>
         <li>
             If you want to solve a matrix equation of the form <i>Ax</i> = <i>b</i>, then after your matrix type "<tt>/</tt>" followed by one or more column vectors (<i>b</i>), formatted in the same way as for the rows of your square matrix.
         </li>
         <li>
-            Example: <a href={{base_url ~ frag2}}>Click here</a> for the url ...herokuapp.com/{{frag2}}, which represents 3 different systems of equations, each having the same square matrix <i>A</i> (which is the same as in the example above):
+            Example: <a href={{base_url ~ frag2}}>Click here</a> for the url ...herokuapp.com{{frag2}}, which represents 3 different systems of equations, each having the same square matrix <i>A</i> (which is the same as in the example above):
         </li>
         <li>
             If you want the response in json rather than in html, simply insert <tt>/api</tt> between <tt>...heroku.com</tt> and the matrix.
