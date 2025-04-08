@@ -14,13 +14,22 @@ def react_root(path):
 
 @app.route('/')
 def hello():
-    return render_template('index.html')
+    return render_template(
+        'index.html',
+        base_url="https://matrix-inverse.herokuapp.com",
+        frag1 = "/[[1,2],[3,4]]",
+        frag2 = "/[[1,2],[3,4]]/[[3,5],[2,4],[-1,0]]",
+    )
 
 @app.route('/<square_in>')
 def square(square_in):
     results = helper.parse(False, square_in)
     if "error" in results:
-        return render_template('error.html', message=results["error"]["message"], strings=results["error"]["strings"])
+        return render_template(
+            'error.html',
+            message=results["error"]["message"],
+            strings=results["error"]["strings"],
+        )
     else:
         determinant = results["determinant"]
         original_matrix = results["original matrix"]
